@@ -1,19 +1,32 @@
-# SOC Splunk Detections (Windows Auth + Privilege Changes)
+# SOC Log Detection & Incident Analysis (Splunk)
 
 ## Objective
-Build SOC-style detections in Splunk focused on authentication anomalies and privilege-related activity.
+Demonstrate SOC-style monitoring, detection, and investigation using log analysis focused on authentication activity and access-related events.
 
-## What I Built
-- Searches for repeated failed logons
-- Detection logic for suspicious authentication patterns
-- Alerts for privilege/role changes (where applicable)
-- Short incident-style writeups documenting:
-  - What happened
-  - What evidence was found
-  - Recommended response steps
+## Scenario
+Security logs were ingested into Splunk to simulate a SOC monitoring environment. The goal was to identify suspicious authentication behavior and privilege-related activity that could indicate account misuse or access risk.
 
-## Tools
-Splunk, Windows event logs (auth/security), basic SOC triage methodology
+## Detections Implemented
+- Repeated failed login attempts
+- Abnormal authentication patterns across time windows
+- Privilege or role change activity (where applicable)
 
-## Why It Matters
-These detections map to common SOC monitoring responsibilities and help identify account misuse and access-risk activity.
+## Investigation Approach
+For each detection:
+- Reviewed authentication events and timestamps
+- Identified affected accounts and source systems
+- Checked for follow-on successful logins
+- Assessed whether activity was expected or suspicious
+
+## Incident Writeups
+Each alert includes a short incident-style writeup documenting:
+- Alert summary
+- Evidence reviewed
+- Findings
+- Recommended response actions
+
+## Tools Used
+Splunk, Windows authentication/security logs, SOC triage methodology
+
+## Why This Matters
+Authentication abuse and privilege misuse are common attack vectors. SOC teams rely on log-based detections like these to identify account compromise early and reduce access-related risk.
