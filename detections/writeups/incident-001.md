@@ -1,16 +1,25 @@
-# Incident Writeup 001 - Authentication Anomaly
+# Incident Writeup 001 – Authentication Anomaly
 
-## Summary
-Documented investigation of abnormal authentication activity detected via Splunk.
+## Alert Summary
+An alert was generated for repeated failed authentication attempts associated with a single user account.
 
 ## Evidence Reviewed
-- Authentication events
+- Authentication failure events
+- Source IP address
 - Time window of activity
-- Source IP/host patterns
-- Account impacted
+- User account history
 
-## Findings
-- (What you observed)
+## Investigation Findings
+The account experienced multiple failed login attempts over a short period. No immediate successful login was observed following the failures. Activity did not align with typical user behavior.
 
-## Action Taken / Recommendation
-- (What you would do next)
+## Impact Assessment
+Potential risk of account compromise if activity were to continue or succeed.
+
+## Recommended Actions
+- Notify the user of suspicious activity
+- Monitor the account for follow-on authentication attempts
+- Enforce password reset if activity persists
+- Document the incident for tracking and trend analysis
+
+## Lessons Learned
+Early detection of authentication anomalies helps reduce the likelihood of successful account compromise and supports proactive security monitoring.
